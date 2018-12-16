@@ -36,7 +36,7 @@ This project uses custom 3D printed parts, custom fabricated parts, and stock pr
 
 # Mechanical Components
 
-<b>BlueRobotics products<br>
+<b>BlueRobotics products</b><br>
 https://www.bluerobotics.com/store/watertight-enclosures/3-series/wte3-asm-r1/#configuration
 https://www.bluerobotics.com/store/sensors-sonars-cameras/sensors/bar30-sensor-r1/
 https://www.bluerobotics.com/store/thrusters/grippers/newton-gripper-asm-r1-rp/
