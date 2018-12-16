@@ -132,23 +132,23 @@ volatile byte var_flag = 0; //flag to use Serial OUTSIDE of interrupts because s
 #define maxSelect  166
 */
 
-/*STEVE RESISTORS' VALUES
-/* values are set depending on resistor values. Common resistor is 10k
-#define minUp  195 //175 to 185 based on a 4.7k resistor value for UP arrow button
+//STEVE RESISTORS' VALUES
+// values are set depending on resistor values. Common resistor is 10k
+#define minUp  190 //175 to 185 based on a 4.7k resistor value for UP arrow button
 #define maxUp  205
 #define minDown  210 //189 to 220 based on a 1k resistor value for DOWN arrow button
 #define maxDown  220
 #define minSelect  175 //120 to 166 based on a 10k resistor value for SELECT button
-#define maxSelect  189*/
+#define maxSelect  189
 
-/*GAMEBOY RESISTORS VALUES
-/* values are set depending on resistor values. Common resistor is 10k*/
+/*//GAMEBOY RESISTORS VALUES
+// values are set depending on resistor values. Common resistor is 10k
 #define minUp  185 //175 to 185 based on a 4.7k resistor value for UP arrow button
 #define maxUp  195
 #define minDown  200 //189 to 220 based on a 1k resistor value for DOWN arrow button
 #define maxDown  220
 #define minSelect  165 //120 to 166 based on a 10k resistor value for SELECT button
-#define maxSelect  175
+#define maxSelect  175*/
 
 /*LCD VARIABLES--------------------------------------------------------*/
 #define I2C_ADDR    0x27  // Define I2C Address for the PCF8574T
@@ -255,13 +255,13 @@ void loop() {
     receivedData = (receivedData >> 4);
 
     //Serial.print("Real received value: ");
-    Serial.println(receivedData);
+    //Serial.println(receivedData);
 
     /*ISOLATE THE ID FROM THE RECEIVED LOW BYTE------------------------------*/
     byte receivedID = (L << 4);
     receivedID = (receivedID >> 4);
     //  Serial.print("only ID left: ");
-    Serial.println(receivedID, BIN);
+   // Serial.println(receivedID, BIN);
 
     /*Serial.print("high b: ");
       Serial.println(h, BIN);

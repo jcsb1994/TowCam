@@ -21,7 +21,7 @@ void updateScreen() {
     //-----------------------------------------------------------------
 
 
-    /*SCROLLING MENU -------------------------*/
+    //SCROLLING MENU -------------------------
 
     if (menuState == scrolling_menu) {
 
@@ -107,7 +107,7 @@ void updateScreen() {
       }
     }
 
-    /*MODIFICATION MENU ------------------------*/
+    //MODIFICATION MENU ------------------------
 
     else {
       switch (menuPage) {
@@ -180,5 +180,214 @@ void updateScreen() {
 
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*SERIAL VERISON (IF NO LCD SCREEN IS AVAILABLE)*/
+
+/*void updateScreen() {
+  //received_Flag removed so the Serial monitor doesn't get flooded
+  if (buttonFlag) {  
+    lcd.clear();
+    float showKp = Kp;
+    float showKi = Ki;
+    float showKd = Kd;
+
+    //debugging info Sent to lcd -----------------------------------
+    Serial.println("----------------------------------------");
+    Serial.println();
+    Serial.print("voltage: ");
+    Serial.println(voltage);
+    Serial.println();
+    Serial.print("menuPage: ");
+    Serial.println(menuPage);
+    Serial.println();
+    Serial.print("menuState: ");
+    Serial.println(menuState);
+    //-----------------------------------------------------------------
+
+
+    //SCROLLING MENU -------------------------
+
+    if (menuState == scrolling_menu) {
+
+      switch (menuPage) {
+        case setPoint_menu:
+          Serial.print("Target dist: ");
+          Serial.print(setPoint);
+          Serial.println(); //Start at character 0 on line 1
+          Serial.print("Measured dist: ");
+          Serial.print(receivedAltitude);
+          Serial.println();
+          Serial.print("SLCT to set dist");
+          break;
+          
+        case lightLevel_menu:
+          Serial.print("light: ");
+          Serial.print(receivedLightLevel);
+          Serial.print("%");
+          Serial.println();
+          Serial.print("SLCT to ctrl light");
+          break;
+          
+        case goproServo_menu:
+          Serial.print("Pressure: ");
+          Serial.print(receivedDepth);
+          Serial.println();
+          Serial.print("Temp: ");
+          Serial.print(receivedTemperature);
+          Serial.println();
+          Serial.print("Plane angle: ");
+          Serial.print(receivedPlanesAngle);
+          Serial.println();
+          Serial.print("SLCT: ctrl camera");
+          break;
+
+        case Kp_menu:
+          Serial.print("--> Kp: ");
+          Serial.print(showKp/10);
+          Serial.println();
+          Serial.print("Ki: ");
+          Serial.print(showKi/10);
+          Serial.println();
+          Serial.print("Kd: ");
+          Serial.print(showKd/10);
+          Serial.println();
+          Serial.print("SLCT to set Kp");
+          break;
+
+        case Ki_menu:
+          Serial.print("Kp: ");
+          Serial.print(showKp/10);
+          Serial.println();
+          Serial.print("--> Ki: ");
+          Serial.print(showKi/10);
+          Serial.println();
+          Serial.print("Kd: ");
+          Serial.print(showKd/10);
+          Serial.println();
+          Serial.print("SLCT: set Ki");
+          break;
+
+        case Kd_menu:
+          Serial.print("Kp: ");
+          Serial.print(showKp/10);
+          Serial.println();
+          Serial.print("Ki: ");
+          Serial.print(showKi/10);
+          Serial.println();
+          Serial.print("--> Kd: ");
+          Serial.print(showKd/10);
+          Serial.println();
+          Serial.print("SLCT to set Kd");
+          break;
+
+        case scale_menu:
+          Serial.print("PID K's scale: ");
+          Serial.print(K_scale/10);
+          Serial.println();
+          Serial.print("SLCT to change value of");
+          Serial.println();
+          Serial.print("of K in/decrements");
+          break;
+      }
+    }
+
+    //MODIFICATION MENU ------------------------
+
+    else {
+      switch (menuPage) {
+        case setPoint_menu:
+          Serial.print("UP, DOWN to set");
+          Serial.println();
+          Serial.print("target dist: ");
+          Serial.print(setPoint);
+          Serial.println();
+          Serial.print("SLCT to save");
+          break;
+
+        case lightLevel_menu:
+          Serial.print("UP, DOWN to change");
+          Serial.println();
+          Serial.print("light level");
+          Serial.println();
+          Serial.print("SLCT to finish");
+          break;
+
+        case goproServo_menu:
+          Serial.print("UP, DOWN to ctrl");
+          Serial.println();
+          Serial.print("camera angle");
+          Serial.println();
+          Serial.print("SLCT to finish");
+          break;
+
+        case Kp_menu:
+          Serial.print("UP, DOWN to change");
+          Serial.println();
+          Serial.print("Kp: ");
+          Serial.print(showKp/10);
+          Serial.println();
+          Serial.print("SLCT to save");
+          break;
+
+        case Ki_menu:
+          Serial.print("UP, DOWN to change");
+          Serial.println();
+          Serial.print("Ki: ");
+          Serial.print(showKi/10);
+          Serial.println();
+          Serial.print("SLCT to save");
+          break;
+
+        case Kd_menu:
+          Serial.print("UP, DOWN to change");
+          Serial.println();
+          Serial.print("Kd: ");
+          Serial.print(showKd/10);
+          Serial.println();
+          Serial.print("SLCT to save");
+          break;
+          
+        case scale_menu:
+          Serial.print("UP, DOWN to change");
+          Serial.println();
+          Serial.print("PID K's scale: ");
+          Serial.print(K_scale/10);
+          Serial.println();
+          Serial.print("SLCT to save");
+          break;
+      }
+    }
+
+    //FLAG TO SHOW THE SCREEN HAS BEEN UPDATED
+    buttonFlag = 0;
+    received_Flag = 0;
+
+  }
+}
+*/
+
+
+
+
+
+
 
 
